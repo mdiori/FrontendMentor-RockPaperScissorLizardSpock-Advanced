@@ -1,0 +1,352 @@
+html {
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 1.125rem;
+  /* font-weight: 300; */
+  /* color: $grayishBlue; */
+  line-height: 1.3;
+  background-image: radial-gradient(#1f3756, #141539);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body.noscroll {
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+  /* font-weight: 300; */
+  /* line-height: 0.85; */
+  /* color: $darkBlue; */
+}
+
+h1,
+h2,
+h3,
+p {
+  text-transform: uppercase;
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-jc-sb {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex-jc-c {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-ai-c {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex-fd-col {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 63.9375em) {
+  .hide-for-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 64em) {
+  .hide-for-desktop {
+    display: none;
+  }
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  height: 160px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid green;
+}
+
+@media (max-width: 63.9375em) {
+  .header {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 64em) {
+  .header {
+    height: 246px;
+  }
+}
+
+.header__scoreboard {
+  position: relative;
+  height: 100px;
+  width: 100%;
+  border: 2px solid #606e85;
+  border-radius: 5px;
+  display: -ms-grid;
+  display: grid;
+  padding: 0 11px 0 22px;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 64em) {
+  .header__scoreboard {
+    height: 152px;
+  }
+}
+
+.header__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 12px;
+  line-height: 0.9;
+  color: white;
+}
+
+.header__title .title {
+  margin: auto 0;
+}
+
+.header__score {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.header__score .score {
+  width: 82px;
+  height: 72px;
+  margin: auto 0;
+  background-color: white;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.header__score .score h3 {
+  padding-top: 13px;
+  font-size: 10px;
+  line-height: 0.8;
+  letter-spacing: 1px;
+  color: #2a46c0;
+}
+
+.header__score .score h1 {
+  font-size: 35px;
+  color: #3b4363;
+}
+
+.game {
+  height: calc(100vh - 160px - 150px);
+  border: 1px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.game__pentagon {
+  background-image: url("../../images/bg-pentagon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 210px;
+  width: 210px;
+  margin: auto;
+}
+
+.game__button {
+  width: 99px;
+  height: 99px;
+  border-radius: 50%;
+  overflow: hidden;
+  /* .circle:hover {
+      box-shadow: inset 3px 3px 4px #000;
+    } */
+}
+
+.game__button .circle-border {
+  min-width: 100px;
+  min-height: 100px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.game__button .circle {
+  height: 75px;
+  width: 75px;
+  background-color: white;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: inset 3px 3px 4px #000;
+          box-shadow: inset 3px 3px 4px #000;
+}
+
+.game__button img {
+  width: 40px;
+}
+
+.game__scissor {
+  position: relative;
+  top: -60px;
+  left: 50px;
+}
+
+.game__scissor .circle-border {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ec9e0e), to(#eca922));
+  background: linear-gradient(#ec9e0e, #eca922);
+}
+
+.game__paper {
+  position: relative;
+  top: -80px;
+  left: 160px;
+}
+
+.game__paper .circle-border {
+  background: -webkit-gradient(linear, left top, left bottom, from(#4865f4), to(#5671f5));
+  background: linear-gradient(#4865f4, #5671f5);
+}
+
+.game__rock {
+  position: relative;
+  top: -65px;
+  left: 115px;
+}
+
+.game__rock .circle-border {
+  background: -webkit-gradient(linear, left top, left bottom, from(#dc2e4e), to(#dd405d));
+  background: linear-gradient(#dc2e4e, #dd405d);
+}
+
+.game__lizard {
+  position: relative;
+  top: -160px;
+  left: -25px;
+}
+
+.game__lizard .circle-border {
+  background: -webkit-gradient(linear, left top, left bottom, from(#834fe3), to(#8c5de5));
+  background: linear-gradient(#834fe3, #8c5de5);
+}
+
+.game__spock {
+  position: relative;
+  top: -375px;
+  left: -55px;
+}
+
+.game__spock .circle-border {
+  background: -webkit-gradient(linear, left top, left bottom, from(#40b9ce), to(#52bed1));
+  background: linear-gradient(#40b9ce, #52bed1);
+}
+
+.footer {
+  height: 150px;
+  width: 100%;
+  border: 1px solid orange;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer__rules button {
+  width: 130px;
+  height: 42px;
+  background-color: transparent;
+  border-radius: 10px;
+  border: 2px solid white;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1.3px;
+}
+/*# sourceMappingURL=style.css.map */

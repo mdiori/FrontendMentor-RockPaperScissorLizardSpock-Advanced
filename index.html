@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./app/scss/style.css" />
+
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__scoreboard">
+        <div class="header__title">
+          <div class="title">
+            <h3>Rock</h3>
+            <h3>Paper</h3>
+            <h3>Scissors</h3>
+            <h3>Lizard</h3>
+            <h3>Spock</h3>
+          </div>
+        </div>
+        <div class="header__score">
+          <div class="score">
+            <h3>Score</h3>
+            <h1>12</h1>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="flex flex-jc-c flex-ai-c">
+      <div class="game">
+        <div class="game__pentagon">
+          <div class="game__button game__scissor">
+            <div class="circle-border">
+              <div class="circle">
+                <img src="./images/icon-scissors.svg" alt="Scissor" />
+              </div>
+            </div>
+          </div>
+
+          <div class="game__button game__paper">
+            <div class="circle-border">
+              <div class="circle">
+                <img src="./images/icon-paper.svg" alt="Paper" />
+              </div>
+            </div>
+          </div>
+
+          <div class="game__button game__rock">
+            <div class="circle-border">
+              <div class="circle">
+                <img src="./images/icon-rock.svg" alt="Rock" />
+              </div>
+            </div>
+          </div>
+
+          <div class="game__button game__lizard">
+            <div class="circle-border">
+              <div class="circle">
+                <img src="./images/icon-lizard.svg" alt="Lizard" />
+              </div>
+            </div>
+          </div>
+
+          <div class="game__button game__spock">
+            <div class="circle-border">
+              <div class="circle">
+                <img src="./images/icon-spock.svg" alt="Spock" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__rules">
+        <button>Rules</button>
+      </div>
+    </footer>
+  </body>
+</html>

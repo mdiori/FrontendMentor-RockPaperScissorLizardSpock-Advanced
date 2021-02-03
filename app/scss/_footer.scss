@@ -1,0 +1,23 @@
+.footer {
+  height: 150px;
+  width: 100%;
+  border: 1px solid orange;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__rules {
+    button {
+      width: 130px;
+      height: 42px;
+      background-color: transparent;
+      border-radius: 10px;
+      border: 2px solid $white;
+      color: $white;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 1.3px;
+    }
+  }
+}
