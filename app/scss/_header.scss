@@ -9,8 +9,6 @@
   align-items: center;
   justify-content: center;
 
-  border: 1px solid green;
-
   @include breakpoint-down(medium) {
     padding-left: 30px;
     padding-right: 30px;
@@ -32,6 +30,7 @@
     grid-template-columns: repeat(2, 1fr);
 
     @include breakpoint-up(large) {
+      padding: 0 24px 0 30px;
       height: 152px;
     }
   }
@@ -41,6 +40,11 @@
     font-size: 12px;
     line-height: 0.9;
     color: $white;
+    text-shadow: 2px 2px 4px #000000;
+
+    @include breakpoint-up(large) {
+      font-size: 23px;
+    }
 
     .title {
       margin: auto 0;
@@ -58,6 +62,12 @@
       background-color: $white;
       border-radius: 5px;
       text-align: center;
+
+      @include breakpoint-up(large) {
+        width: 151px;
+        height: 116px;
+        border-radius: 10px;
+      }
     }
 
     .score h3 {
@@ -66,11 +76,22 @@
       line-height: 0.8;
       letter-spacing: 1px;
       color: $scoreText;
+
+      @include breakpoint-up(large) {
+        padding-top: 18px;
+        font-size: 18px;
+        letter-spacing: 2px;
+        font-weight: lighter;
+      }
     }
 
     .score h1 {
       font-size: 35px;
       color: $darkText;
+
+      @include breakpoint-up(large) {
+        font-size: 55px;
+      }
     }
   }
 }

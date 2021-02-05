@@ -1,10 +1,13 @@
 .game {
   height: calc(100vh - 160px - 150px);
-  border: 1px solid red;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include breakpoint-up(large) {
+    height: calc(100vh - 246px);
+  }
 
   &__pentagon {
     background-image: url("../../images/bg-pentagon.svg");
@@ -14,19 +17,28 @@
     height: 210px; //*
     width: 210px;
     margin: auto;
+
+    @include breakpoint-up(large) {
+      height: 310px;
+      width: 310px;
+    }
   }
 
   &__button {
-    width: 99px;
-    height: 99px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
 
     overflow: hidden;
 
+    @include breakpoint-up(large) {
+      width: 150px;
+      height: 150px;
+    }
+
     .circle-border {
-      min-width: 100px;
-      min-height: 100px;
-      border-radius: 50%;
+      min-width: 100%;
+      min-height: 100%;
 
       display: flex;
       align-items: center;
@@ -43,15 +55,27 @@
       align-items: center;
       justify-content: center;
 
-      box-shadow: inset 3px 3px 4px #000;
+      box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.75);
+
+      @include breakpoint-up(large) {
+        height: 115px;
+        width: 115px;
+      }
     }
 
-    /* .circle:hover {
+    .circle:hover {
       box-shadow: inset 3px 3px 4px #000;
-    } */
+      cursor: pointer;
+    }
 
-    img {
-      width: 40px;
+    svg {
+      transform: scale(0.7);
+    }
+
+    @include breakpoint-up(large) {
+      svg {
+        transform: scale(1);
+      }
     }
   }
 
@@ -59,8 +83,12 @@
     position: relative;
     top: -60px;
     left: 50px;
+    @include breakpoint-up(large) {
+      top: -90px;
+      left: 80px;
+    }
     .circle-border {
-      background: $scissorsGradient;
+      background: $scissorGradient;
     }
   }
 
@@ -68,6 +96,10 @@
     position: relative;
     top: -80px;
     left: 160px;
+    @include breakpoint-up(large) {
+      top: -110px;
+      left: 240px;
+    }
     .circle-border {
       background: $paperGradient;
     }
@@ -77,6 +109,10 @@
     position: relative;
     top: -65px;
     left: 115px;
+    @include breakpoint-up(large) {
+      top: -50px;
+      left: 180px;
+    }
     .circle-border {
       background: $rockGradient;
     }
@@ -86,6 +122,10 @@
     position: relative;
     top: -160px;
     left: -25px;
+    @include breakpoint-up(large) {
+      top: -200px;
+      left: -40px;
+    }
     .circle-border {
       background: $lizardGradient;
     }
@@ -95,8 +135,224 @@
     position: relative;
     top: -375px;
     left: -55px;
+
+    @include breakpoint-up(large) {
+      top: -555px;
+      left: -90px;
+    }
     .circle-border {
       background: $cyan;
+    }
+  }
+
+  // Result
+  &__result {
+    position: absolute;
+
+    height: calc(100vh - 160px);
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+
+    padding: 100px 15px;
+
+    @include breakpoint-up(large) {
+      top: 246px;
+      height: calc(100vh - 246px);
+      width: 50%;
+
+      padding: 50px 15px;
+
+      &.shown {
+        width: 100%;
+        grid-template-columns: 2fr 1fr 2fr;
+      }
+    }
+
+    .circle-border {
+      width: 135px;
+      height: 135px;
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include breakpoint-up(large) {
+        width: 300px;
+        height: 300px;
+      }
+    }
+
+    .circle {
+      position: absolute;
+      height: 101.25px;
+      width: 101.25px;
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.75);
+
+      @include breakpoint-up(large) {
+        height: 230px;
+        width: 230px;
+      }
+    }
+
+    .icon {
+      position: absolute;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      height: 55px;
+      width: 55px;
+
+      @include breakpoint-up(large) {
+        height: 100px;
+        width: 100px;
+      }
+    }
+
+    .text {
+      font-size: 18px;
+      text-align: center;
+      color: $white;
+      letter-spacing: 1.15px;
+
+      @include breakpoint-up(large) {
+        font-size: 26px;
+      }
+    }
+  }
+
+  &__you,
+  &__house {
+    &.scissor {
+      .circle {
+        background-color: $white;
+      }
+      .circle-border {
+        background: $scissorGradient;
+      }
+      .icon {
+        background-image: url("../../images/icon-scissor.svg");
+      }
+    }
+    &.paper {
+      .circle {
+        background-color: $white;
+      }
+      .circle-border {
+        background: $paperGradient;
+      }
+      .icon {
+        background-image: url("../../images/icon-paper.svg");
+      }
+    }
+    &.rock {
+      .circle {
+        background-color: $white;
+      }
+      .circle-border {
+        background: $rockGradient;
+      }
+      .icon {
+        background-image: url("../../images/icon-rock.svg");
+      }
+    }
+    &.lizard {
+      .circle {
+        background-color: $white;
+      }
+      .circle-border {
+        background: $lizardGradient;
+      }
+      .icon {
+        background-image: url("../../images/icon-lizard.svg");
+      }
+    }
+    &.spock {
+      .circle {
+        background-color: $white;
+      }
+      .circle-border {
+        background: $cyan;
+      }
+      .icon {
+        background-image: url("../../images/icon-spock.svg");
+      }
+    }
+  }
+
+  &__play-again {
+    display: none;
+  }
+
+  @include breakpoint-up(large) {
+    &__play-again {
+      display: none;
+    }
+  }
+
+  &__result.shown &__play-again {
+    display: block;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+    text-align: center;
+
+    /* padding-bottom: 100px; */
+
+    @include breakpoint-up(large) {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
+
+    .result {
+      font-size: 50px;
+      letter-spacing: 1.15px;
+      color: $white;
+      padding-bottom: 20px;
+    }
+
+    button.play-again {
+      position: relative;
+      width: 212px;
+      height: 50px;
+      border-radius: 10px;
+      background-color: $white;
+      cursor: pointer;
+
+      text-transform: uppercase;
+      font-size: 15px;
+      font-weight: bold;
+
+      border: none;
+      background: none;
+      outline: none;
+      mix-blend-mode: screen;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: white;
+        border-radius: 0.3em;
+        content: "";
+        mix-blend-mode: color-burn;
+      }
     }
   }
 }
