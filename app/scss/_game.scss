@@ -172,6 +172,48 @@
       }
     }
 
+    &.shown .winner .circle-border {
+      > span:first-child {
+        position: absolute;
+        width: 175px;
+        height: 175px;
+        border-radius: 50%;
+        z-index: -1;
+        background-color: rgba(255, 255, 255, 0.15);
+
+        @include breakpoint-up(large) {
+          width: 375px;
+          height: 375px;
+        }
+      }
+
+      > span:nth-child(2) {
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        z-index: -2;
+        background-color: rgba(255, 255, 255, 0.05);
+        @include breakpoint-up(large) {
+          width: 450px;
+          height: 450px;
+        }
+      }
+
+      > span:nth-child(3) {
+        position: absolute;
+        width: 325px;
+        height: 325px;
+        border-radius: 50%;
+        z-index: -3;
+        background-color: rgba(255, 255, 255, 0.03);
+        @include breakpoint-up(large) {
+          width: 525px;
+          height: 525px;
+        }
+      }
+    }
+
     .circle-border {
       width: 135px;
       height: 135px;
@@ -308,8 +350,6 @@
     grid-row-end: 3;
 
     text-align: center;
-
-    /* padding-bottom: 100px; */
 
     @include breakpoint-up(large) {
       grid-column-start: 2;

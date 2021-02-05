@@ -17,7 +17,6 @@ const playAgainButton = document.querySelector(".play-again");
 const scoreValue = document.querySelector(".score-value");
 
 const fadeSwitch = function (element, fade) {
-  console.log(element.classList);
   if (fade === "fade-in") {
     if (element.classList.contains("fade-out")) {
       element.classList.remove("fade-out");
@@ -94,7 +93,7 @@ const defineWinner = function (event) {
   yourChoiceDiv.classList.add(userChoice);
   const houseChoice = getRandomChoice();
 
-  let currentScore = parseInt(scoreValue.innerHTML);
+  let currentScore = scoreValue.innerHTML;
 
   let winner = "";
   if (userChoice === houseChoice) {
@@ -137,7 +136,6 @@ const defineWinner = function (event) {
   }
 
   matchResult.innerHTML = winner;
-  console.log(winner);
 
   fadeSwitch(gamePentagon, "fade-out");
   fadeSwitch(gameResultDiv, "fade-in");
@@ -146,6 +144,15 @@ const defineWinner = function (event) {
     shownSwitch(gameResultDiv, "add");
     houseChoiceDiv.classList.add(houseChoice);
     scoreValue.innerHTML = currentScore;
+
+    if (winner === "You win") {
+      yourChoiceDiv.classList.add("winner");
+    } else if (winner === "You lost") {
+      houseChoiceDiv.classList.add("winner");
+    } else {
+      houseChoiceDiv.classList.add("winner");
+      yourChoiceDiv.classList.add("winner");
+    }
   }, 1000);
 
   fadeSwitch(playAgainDiv, "fade-in");
