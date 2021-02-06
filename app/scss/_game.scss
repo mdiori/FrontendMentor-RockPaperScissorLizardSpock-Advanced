@@ -65,17 +65,19 @@
 
     .circle:hover {
       box-shadow: inset 3px 3px 4px #000;
+      svg {
+        transform: scale(0.65) translateY(3px);
+      }
+      @include breakpoint-up(large) {
+        svg {
+          transform: scale(0.95) translateY(3px);
+        }
+      }
       cursor: pointer;
     }
 
     svg {
       transform: scale(0.7);
-    }
-
-    @include breakpoint-up(large) {
-      svg {
-        transform: scale(1);
-      }
     }
   }
 
