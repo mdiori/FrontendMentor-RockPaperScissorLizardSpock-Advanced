@@ -1,7 +1,7 @@
 html {
   font-size: 100%;
   box-sizing: border-box;
-  height: 100%;
+  min-height: 100vh;
   overflow: hidden;
   background-image: $backgroundRadialGradient;
 }
@@ -15,7 +15,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-
+  min-height: 100vh;
   font-family: "Barlow Semi Condensed", sans-serif;
   font-size: 18px;
   line-height: 1.3;

@@ -78,6 +78,10 @@
 
     svg {
       transform: scale(0.7);
+
+      @include breakpoint-up(large) {
+        transform: scale(1);
+      }
     }
   }
 
